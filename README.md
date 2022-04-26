@@ -27,6 +27,7 @@
 ### For complete automation, check this source code here. 
 [<img src="https://i.imgur.com/ixXsNZ8.png" width="80"/>](https://replit.com/@AdityaRajgor/RedditMemesSource)
 
+---
 ### To-Do
 - Make the script more memory friendly
    - Use native `csv` then `pandas` for look up
@@ -37,6 +38,6 @@
 
 -  Create script which support both vidoes and images
  
-
+---
 ### References
 - https://www.youtube.com/watch?v=S6pBLq8Jv_A&

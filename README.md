@@ -29,6 +29,8 @@
 
 ---
 ### To-Do
+- Add hashtag from the caption, remove stopwords and add them
+
 - Make the script more memory friendly
    - Use native `csv` then `pandas` for look up
    - Or use sql database

@@ -37,6 +37,8 @@
    - Get the text from the image, and check for cursed words, if found use another image
 
 -  Create script which support both vidoes and images
+
+- Current code is not business oriented, providing no value at all. Change the theme of the Instagram account 
  
 ---
 ### References

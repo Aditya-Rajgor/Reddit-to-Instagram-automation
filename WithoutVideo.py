@@ -8,6 +8,8 @@ import time
 from pytz import timezone
 from datetime import datetime
 import os
+import json
+from better_profanity import profanity
 
 start = time.time()
 print('running...')
@@ -44,7 +46,7 @@ red = praw.Reddit(client_id=REDDIT_CLEINT_ID,
                   client_secret=REDDIT_CLIENT_SECRET,
                   user_agent=USER_AGENT)
 
-subred = red.subreddit('memes').hot(limit=15)
+subred = red.subreddit('memes').hot(limit=50)
 
 red_post = None
 for i in subred:
@@ -68,7 +70,12 @@ else:
     logger.fatal('reddit post didn\'t have a valid image post increase the limit!')
     raise Exception
 
-caption_final = caption + f"\n\n\n#reddit #redditmemes #memesdaily #meme #memes #dailymemes #everyhour\n\nOP u/{redditor}\n      {short_link}\n\nNew memes every hour from Reddit"
+# removing any curse words if any
+caption = profanity.censor(caption, censor_char='🤐')
+
+# adding extra bio
+caption_final = caption + f"\n\n\n-----------------------------\n😏Credits are never unknown\n👉OP --> u/{redditor}\n{short_link}\n-----------------------------\n\nHashtags - \n#reddit #redditmemes #memesdaily #meme #memes #dailymemes #everyhour"
+
 caption_encoded = urllib.parse.quote(caption_final.encode('utf8'))
 unique_id = short_link.split('/')[-1]
 
@@ -120,16 +127,24 @@ if container_id:
     try:
         lim = requests.get(f'https://graph.facebook.com/v13.0/{IG_USER_ID}/content_publishing_limit?fields=quota_usage,rate_limit_settings&access_token={USER_ACCESS}')
         lim_num = lim.json()['data'][0]['quota_usage']
-        
-        if lim_num < 25:
+        lim_num = int(lim_num)
+        lim_left_before = 25 - lim_num
+        lim_left_after = lim_left_before - 1
+        print(lim_left_after, 'posts left!')
+      
+        with open('posts_left.json', 'w') as f:
+          json.dump({'posts_left': lim_left_after}, f)
+          
+        if lim_num <= 25:
             r_publish = requests.post(publish_url)
             print(r_publish.json()['id'])
-            print('Post is live!', 25 - int(lim_num), 'posts left!')
-            logger.log(10, f'{25-lim_num} posts left')
+            print('Post is live!')
+            logger.log(10, f'{lim_left_after} posts left')
             
         else:
-            logger.fatal(f'limit exhausted! {25-lim_num} left')
+            logger.fatal(f'limit exhausted! {lim_left_after} left')
             print('fatal error, no post left please stop!')
+            raise FutureWarning
             
     except Exception as e:
         logger.log(e)
@@ -140,12 +155,4 @@ ind_time = datetime.now(timezone("Asia/Kolkata")).strftime('%Y-%m-%d %I:%M:%S %p
 print('I ran at', ind_time)
 logger.info(f"Post created at {ind_time}")
 print('Run time ', round(end-start, 2), 'seconds')
-
-
-
-
-
-
-
-
 

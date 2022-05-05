@@ -29,7 +29,7 @@
 
 ---
 ### To-Do
-- Add hashtag from the caption, remove stopwords and add them
+- [x] Add hashtag from the caption, remove stopwords and add them
 
 - Make the script more memory friendly
    - Use native `csv` then `pandas` for look up
@@ -37,8 +37,9 @@
 
 - More instagram terms and conditions friendly
    - Get the text from the image, and check for cursed words, if found use another image
+   - [x] profanity chacked and removed from caption
 
--  Create script which support both vidoes and images
+-  [x] Create script which support both vidoes and images
 
 - Current code is not business oriented, providing no value at all. Change the theme of the Instagram account 
  

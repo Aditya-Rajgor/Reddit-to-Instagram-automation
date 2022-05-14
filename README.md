@@ -1,6 +1,12 @@
+## Updates - 
+- Watch this video for the latest update
+- https://youtu.be/8A0xDbDeYuM
+- Updated file name - `News_Articles.py`
+- Raise the issue for feature and bug
+---
 # Reddit-to-Instagram-automation
 
-### This script posts a meme on my Instagram account EVERY HOUR from Reddit r/memes. 
+### This script (replit) posts a meme on my Instagram account EVERY HOUR from Reddit r/memes. 
 
 ### Check out my instagram account and video for live demo
 

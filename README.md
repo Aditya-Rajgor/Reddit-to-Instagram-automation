@@ -30,26 +30,29 @@
   - Facebook app client id
   - Facebook app client secret
 
-### For complete automation, check this source code here. 
+### For complete automation, check this source codes here. 
 Every Hour | Manual
 | --- | --- |
 |[<img src="https://i.imgur.com/ixXsNZ8.png" width="80"/>](https://replit.com/@AdityaRajgor/RedditMemesSource)|[<img src="https://i.imgur.com/ixXsNZ8.png" width="80"/>](https://replit.com/@AdityaRajgor/LoopOfficial)|
 
 ---
 ### To-Do
+- User access
+   - Currently replit code only limited to personal use. Make the facebook app live, so that anyone can give the access to upload the post upon their Instagram account request. 
+   
 - [x] Add hashtag from the caption, remove stopwords and add them
 
 - Make the script more memory friendly
-   - Use native `csv` then `pandas` for look up
-   - Or use sql database
+   - [] Use native `csv` then `pandas` for look up
+   - [] Or use sql database
 
 - More instagram terms and conditions friendly
-   - Get the text from the image, and check for cursed words, if found use another image
+   - [] Get the text from the image, and check for cursed words, if found use another image
    - [x] profanity chacked and removed from caption
 
 -  [x] Create script which support both vidoes and images
 
-- Current code is not business oriented, providing no value at all. Change the theme of the Instagram account 
+- [x] Current code is not business oriented, providing no value at all. Change the theme of the Instagram account 
  
 ---
 ### References

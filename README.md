@@ -31,7 +31,9 @@
   - Facebook app client secret
 
 ### For complete automation, check this source code here. 
-[<img src="https://i.imgur.com/ixXsNZ8.png" width="80"/>](https://replit.com/@AdityaRajgor/RedditMemesSource)
+Every Hour | Manual
+| --- | --- |
+|[<img src="https://i.imgur.com/ixXsNZ8.png" width="80"/>](https://replit.com/@AdityaRajgor/RedditMemesSource)|[<img src="https://i.imgur.com/ixXsNZ8.png" width="80"/>](https://replit.com/@AdityaRajgor/LoopOfficial)|
 
 ---
 ### To-Do
